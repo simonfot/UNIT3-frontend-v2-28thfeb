@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>UNIT3</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
@@ -143,6 +144,123 @@
         <input type="color" id="customSectionColor" class="custom-color-input">
     </div>
 
-    <script src="js/main.js"></script>
+    <!-- Debug console for troubleshooting -->
+    <div id="debugConsole" class="debug-console"></div>
+
+    <!-- Improved script loading with error handling -->
+    <script>
+        // Initialize debug mode 
+        window.UNIT3_DEBUG = true;
+
+        // Check browser compatibility
+        function checkBrowserSupport() {
+            const issues = [];
+            
+            if (!window.localStorage) issues.push("localStorage is not supported");
+            if (!document.querySelector) issues.push("querySelector is not supported");
+            if (!window.addEventListener) issues.push("addEventListener is not supported");
+            
+            // Check for CSS Grid support
+            if (window.CSS && window.CSS.supports && 
+                !CSS.supports('display', 'grid')) {
+                issues.push("CSS Grid is not fully supported");
+            }
+            
+            if (issues.length > 0) {
+                console.warn("Browser compatibility issues:", issues);
+                
+                // Add a fallback mode flag
+                window.UNIT3_COMPATIBILITY_MODE = true;
+                
+                // Apply compatibility classes
+                document.body.classList.add('compatibility-mode');
+                
+                // Notify user in debug mode
+                if (window.UNIT3_DEBUG) {
+                    showDebugMessage("Browser compatibility issues detected: " + issues.join(", "));
+                }
+            }
+            
+            return issues.length === 0;
+        }
+
+        function showDebugMessage(message) {
+            if (!window.UNIT3_DEBUG) return;
+            
+            console.log("[UNIT3]", message);
+            
+            const debugConsole = document.getElementById('debugConsole');
+            if (debugConsole) {
+                const msgElement = document.createElement('div');
+                msgElement.className = 'debug-message';
+                msgElement.textContent = message;
+                debugConsole.appendChild(msgElement);
+                
+                // Auto-scroll to bottom
+                debugConsole.scrollTop = debugConsole.scrollHeight;
+            }
+        }
+
+        // Check if DOM is ready
+        function domReady(callback) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', callback);
+            } else {
+                callback();
+            }
+        }
+
+        // Initialize application
+        domReady(function() {
+            showDebugMessage("DOM loaded, initializing app...");
+            
+            // Check browser compatibility
+            checkBrowserSupport();
+            
+            // Load main script
+            const script = document.createElement('script');
+            script.src = 'js/main.js';
+            
+            script.onload = function() {
+                showDebugMessage("main.js loaded successfully");
+            };
+            
+            script.onerror = function() {
+                showDebugMessage("ERROR: Failed to load main.js");
+                
+                // Try to add default section as fallback
+                if (typeof window.addDefaultSection === 'function') {
+                    window.addDefaultSection();
+                }
+            };
+            
+            document.body.appendChild(script);
+        });
+
+        // Add global error handler
+        window.onerror = function(message, source, lineno, colno, error) {
+            showDebugMessage(`ERROR: ${message} at ${source}:${lineno}:${colno}`);
+            return false;
+        };
+
+        // Simple fallback function
+        window.addDefaultSection = function() {
+            const contentArea = document.getElementById('contentArea');
+            if (!contentArea) return;
+            
+            contentArea.innerHTML = `
+                <div class="section" style="--section-color: #4ecdc4;">
+                    <div class="section-header">
+                        <div class="section-title">Welcome to UNIT3</div>
+                    </div>
+                    <div class="section-content">
+                        <h3>Latest Updates</h3>
+                        <p>Welcome to UNIT3. If you're seeing this message, there might be an issue with the JavaScript functionality.</p>
+                        <p>Try refreshing the page or using a different browser.</p>
+                    </div>
+                </div>
+            `;
+        };
+    </script>
 </body>
 </html>
