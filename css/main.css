@@ -31,6 +31,70 @@ body.theme-dark {
     color: #fff;
 }
 
+/* Debug Console */
+.debug-console {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    max-height: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 10px;
+    overflow-y: auto;
+    z-index: 10000;
+    display: none;
+}
+
+.debug-message {
+    margin-bottom: 5px;
+    padding: 2px 5px;
+    border-left: 3px solid #4ecdc4;
+}
+
+/* Show debug console when in debug mode */
+body.debug-mode .debug-console {
+    display: block;
+}
+
+/* Browser warning for compatibility mode */
+.browser-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffecb3;
+    color: #663c00;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.browser-warning button {
+    background: #663c00;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Compatibility mode adjustments */
+.compatibility-mode .content-area {
+    display: block; /* Fallback from grid */
+}
+
+.compatibility-mode .section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 /* Sidebar Styles */
 .sidebar {
     position: fixed;
@@ -328,6 +392,18 @@ body.theme-dark .calendar-event {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
     align-content: start;
+}
+
+/* Added for compatibility with older browsers */
+@supports not (display: grid) {
+    .content-area {
+        display: block;
+    }
+    
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 /* Color Picker */
@@ -689,6 +765,11 @@ body.theme-dark .section-color-picker {
 @keyframes slideLeft {
     from { transform: translateX(20px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
+}
+
+/* Button active states for troubleshooting */
+button:active {
+    outline: 2px solid red;
 }
 
 /* Responsive Breakpoints */
