@@ -1,0 +1,7 @@
+This directory will contain images for the UNIT3 website.
+
+Recommended structure:
+- images/ui/ - Interface elements and icons
+- images/content/ - Content images (exhibitions, events, etc.)
+- images/profiles/ - Profile images for directory
+- images/backgrounds/ - Background textures and patterns
