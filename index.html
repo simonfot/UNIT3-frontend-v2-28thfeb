@@ -3,261 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNIT3 - Creative Community Hub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UNIT3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
+    <div class="sidebar">
         <div class="logo-container">
-            <a href="#" class="logo-link">
-                <span class="logo">UNIT</span>
-                <span class="logo-number">3</span>
-            </a>
+            <span class="logo">UNIT</span>
+            <span class="logo-number">3</span>
         </div>
 
-        <nav class="header-nav">
-            <div class="dropdown">
-                <span class="dropdown-trigger">Discover</span>
-                <div class="dropdown-content">
-                    <button data-section="map" class="section-button">
-                        <span class="icon">🗺️</span>
-                        <span>Interactive Map</span>
-                    </button>
-                    <button data-section="now" class="section-button">
-                        <span class="icon">⏱️</span>
-                        <span>Happening Now</span>
-                    </button>
-                    <button data-section="upcoming" class="section-button">
-                        <span class="icon">📅</span>
-                        <span>Upcoming</span>
-                    </button>
-                </div>
-            </div>
+        <div class="sidebar-section">
+            <h2>Creates</h2>
+            <button class="section-button" data-section="Workshops">Workshops</button>
+            <button class="section-button" data-section="Marketplace">Marketplace</button>
+            <button class="section-button" data-section="Skill-Share">Skill-Share</button>
+            <button class="section-button" data-section="The Workroom">The Workroom</button>
+        </div>
 
-            <div class="dropdown">
-                <span class="dropdown-trigger">Create</span>
-                <div class="dropdown-content">
-                    <button data-section="workshops" class="section-button">
-                        <span class="icon">🛠️</span>
-                        <span>Workshops</span>
-                    </button>
-                    <button data-section="marketplace" class="section-button">
-                        <span class="icon">🛍️</span>
-                        <span>Marketplace</span>
-                    </button>
-                    <button data-section="skillshare" class="section-button">
-                        <span class="icon">🤝</span>
-                        <span>Skill Share</span>
-                    </button>
-                    <button data-section="workroom" class="section-button">
-                        <span class="icon">🏢</span>
-                        <span>The Workroom</span>
-                    </button>
-                </div>
-            </div>
+        <div class="sidebar-section">
+            <h2>Curates</h2>
+            <button class="section-button" data-section="Exhibitions">Exhibitions</button>
+            <button class="section-button" data-section="Events">Events</button>
+            <button class="section-button" data-section="The Fungi Room">The Fungi Room</button>
+            <button class="section-button" data-section="Creative Climate Collab">Creative Climate Collab</button>
+        </div>
 
-            <div class="dropdown">
-                <span class="dropdown-trigger">Connect</span>
-                <div class="dropdown-content">
-                    <button data-section="community" class="section-button">
-                        <span class="icon">👥</span>
-                        <span>Community</span>
-                    </button>
-                    <button data-section="events" class="section-button">
-                        <span class="icon">🎭</span>
-                        <span>Events</span>
-                    </button>
-                    <button data-section="fungi" class="section-button">
-                        <span class="icon">🍄</span>
-                        <span>The Fungi Room</span>
-                    </button>
-                </div>
-            </div>
-        </nav>
+        <div class="sidebar-section">
+            <h2>Connects</h2>
+            <button class="section-button" data-section="Directory">Directory</button>
+            <button class="section-button" data-section="Zine">Zine</button>
+            <button class="section-button" data-section="Opportunities">Opportunities</button>
+        </div>
 
-        <div class="header-controls">
-            <div class="theme-switcher">
+        <div class="sidebar-tools">
+            <div class="color-picker">
                 <input type="color" id="themeColor" title="Change theme color">
-                <label for="themeColor" class="color-picker-label">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                    </svg>
-                </label>
+                <label for="themeColor" class="color-picker-label">◐</label>
             </div>
-            
-            <button class="view-mode-toggle" aria-label="Toggle View Mode">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-            
-            <button class="layout-toggle" aria-label="Toggle Layout">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <path d="M3 9h18M9 21V9"></path>
-                </svg>
-            </button>
+            <button class="no-bg-toggle" id="toggleBackground" title="Toggle background">◑</button>
         </div>
-    </header>
-
-    <main>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-section">
-                <h2>CAFE</h2>
-                <ul>
-                    <li><button data-section="day" class="section-button">by day</button></li>
-                    <li><button data-section="night" class="section-button">by night</button></li>
-                    <li><button data-section="map" class="section-button">map</button></li>
-                    <li><button data-section="menu" class="section-button">menu</button></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>CREATES</h2>
-                <ul>
-                    <li><button data-section="workshops" class="section-button">workshops</button></li>
-                    <li><button data-section="marketplace" class="section-button">market place</button></li>
-                    <li><button data-section="skillshare" class="section-button">skill share</button></li>
-                    <li><button data-section="workroom" class="section-button">our workroom</button></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>CURATES</h2>
-                <ul>
-                    <li><button data-section="exhibitions" class="section-button">exhibitions</button></li>
-                    <li><button data-section="events" class="section-button">events</button></li>
-                    <li><button data-section="fungi" class="section-button">the fungi room</button></li>
-                    <li><button data-section="climate" class="section-button">creative climate collab</button></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>CONNECTS</h2>
-                <ul>
-                    <li><button data-section="zine" class="section-button">zine</button></li>
-                    <li><button data-section="directory" class="section-button">directory</button></li>
-                    <li><button data-section="opportunities" class="section-button">opportunities</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="content-area" id="contentArea">
-            <!-- Sections will be dynamically added here -->
-        </div>
-        
-        <div class="workspace-controls">
-            <button id="addSectionBtn" class="add-section-btn" aria-label="Add New Section">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                    <path d="M12 5v14M5 12h14"></path>
-                </svg>
-            </button>
-            
-            <div class="section-tabs" id="sectionTabs">
-                <!-- Active section tabs will appear here -->
-            </div>
-        </div>
-    </main>
-
-    <div class="spatial-map-toggle">
-        <button id="toggleSpatialMap" aria-label="Toggle Spatial Map">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-        </button>
     </div>
 
-    <div class="spatial-map" id="spatialMap">
-        <div class="spatial-map-close">×</div>
-        <div class="spatial-map-content">
+    <div class="main-container">
+        <div class="section-tabs" id="sectionTabs">
+            <!-- Section tabs will be added here dynamically -->
+        </div>
+
+        <div class="dropdown-nav">
+            <div class="dropdown">
+                <span class="dropdown-trigger">Latest</span>
+                <div class="dropdown-content">
+                    <button class="section-button" data-section="News">News</button>
+                    <button class="section-button" data-section="Updates">Updates</button>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <span class="dropdown-trigger">Cafe</span>
+                <div class="dropdown-content">
+                    <button class="section-button" data-section="Menu">Menu</button>
+                    <button class="section-button" data-section="By Day">By Day</button>
+                    <button class="section-button" data-section="By Night">By Night</button>
+                    <button class="section-button" data-section="Events">Events</button>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <span class="dropdown-trigger">Calendar</span>
+                <div class="dropdown-content calendar-dropdown">
+                    <!-- Calendar will be populated here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <div id="contentArea" class="content-area">
+            <!-- Sections will be added here dynamically -->
+        </div>
+    </div>
+
+    <div id="cornerResize" class="corner-resize"></div>
+    <div id="sectionSlider" class="section-slider"></div>
+
+    <div id="spatialMap" class="spatial-map">
+        <button class="map-close-btn" aria-label="Close map">×</button>
+        <div class="map-container">
             <h2>UNIT3 Interactive Map</h2>
-            <div class="map-container">
-                <div class="map-area">
-                    <!-- Map will be rendered here -->
-                    <svg id="venueMap" width="100%" height="100%" viewBox="0 0 800 500">
-                        <!-- Cafe Area -->
-                        <g class="map-section" data-section="cafe">
-                            <rect x="50" y="50" width="300" height="200" class="map-room" />
-                            <text x="200" y="150" class="map-label">Café Space</text>
-                        </g>
-                        
-                        <!-- Workroom -->
-                        <g class="map-section" data-section="workroom">
-                            <rect x="400" y="50" width="350" height="200" class="map-room" />
-                            <text x="575" y="150" class="map-label">Workroom</text>
-                        </g>
-                        
-                        <!-- Exhibition Space -->
-                        <g class="map-section" data-section="exhibition">
-                            <rect x="50" y="300" width="450" height="150" class="map-room" />
-                            <text x="275" y="375" class="map-label">Exhibition Space</text>
-                        </g>
-                        
-                        <!-- Fungi Room -->
-                        <g class="map-section" data-section="fungi">
-                            <rect x="550" y="300" width="200" height="150" class="map-room" />
-                            <text x="650" y="375" class="map-label">Fungi Room</text>
-                        </g>
-
-                        <!-- Activity Indicators -->
-                        <g class="activity-indicators">
-                            <circle cx="200" cy="100" r="8" class="activity-dot active" data-activity="Coffee Workshop" />
-                            <circle cx="575" cy="100" r="8" class="activity-dot moderate" data-activity="Digital Workspaces" />
-                            <circle cx="275" cy="325" r="8" class="activity-dot quiet" data-activity="Art Installation" />
-                            <circle cx="650" cy="325" r="8" class="activity-dot active" data-activity="Fungi Tour" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="map-legend">
-                    <div class="legend-item">
-                        <span class="legend-color cafe"></span>
-                        <span class="legend-text">Café Space</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color workroom"></span>
-                        <span class="legend-text">Workroom</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color exhibition"></span>
-                        <span class="legend-text">Exhibition</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color fungi"></span>
-                        <span class="legend-text">Fungi Room</span>
-                    </div>
-                </div>
-
-                <div class="activity-feed">
-                    <h3>Current Activities</h3>
-                    <ul id="activityList">
-                        <!-- Dynamically populated -->
-                    </ul>
-                </div>
+            <div class="map-content">
+                <svg id="venueMap" width="100%" height="100%" viewBox="0 0 800 500">
+                    <!-- Cafe Area -->
+                    <g class="map-section" data-section="Menu">
+                        <rect x="50" y="50" width="300" height="200" class="map-room" />
+                        <text x="200" y="150" class="map-label">Café Space</text>
+                    </g>
+                    
+                    <!-- Workroom -->
+                    <g class="map-section" data-section="The Workroom">
+                        <rect x="400" y="50" width="350" height="200" class="map-room" />
+                        <text x="575" y="150" class="map-label">Workroom</text>
+                    </g>
+                    
+                    <!-- Exhibition Space -->
+                    <g class="map-section" data-section="Exhibitions">
+                        <rect x="50" y="300" width="450" height="150" class="map-room" />
+                        <text x="275" y="375" class="map-label">Exhibition Space</text>
+                    </g>
+                    
+                    <!-- Fungi Room -->
+                    <g class="map-section" data-section="The Fungi Room">
+                        <rect x="550" y="300" width="200" height="150" class="map-room" />
+                        <text x="650" y="375" class="map-label">Fungi Room</text>
+                    </g>
+                </svg>
             </div>
         </div>
     </div>
 
-    <div class="section-picker" id="sectionPicker">
-        <div class="picker-header">
-            <h3>Add Section</h3>
+    <button id="toggleSpatialMap" class="map-toggle" aria-label="Open map">
+        <span class="map-icon">🗺️</span>
+    </button>
+
+    <div id="colorPicker" class="section-color-picker">
+        <div class="color-picker-header">
+            <h3>Choose Section Color</h3>
             <button class="close-picker">×</button>
         </div>
-        <div class="picker-options">
-            <!-- Will be populated dynamically -->
+        <div class="color-options">
+            <button class="color-option" data-color="#ff6b6b" style="background-color: #ff6b6b;"></button>
+            <button class="color-option" data-color="#4ecdc4" style="background-color: #4ecdc4;"></button>
+            <button class="color-option" data-color="#95a5a6" style="background-color: #95a5a6;"></button>
+            <button class="color-option" data-color="#ffd93d" style="background-color: #ffd93d;"></button>
+            <button class="color-option" data-color="#6c5ce7" style="background-color: #6c5ce7;"></button>
+            <button class="color-option" data-color="#fdcb6e" style="background-color: #fdcb6e;"></button>
+            <button class="color-option" data-color="#55efc4" style="background-color: #55efc4;"></button>
+            <button class="color-option" data-color="#81ecec" style="background-color: #81ecec;"></button>
+            <button class="color-option" data-color="#fab1a0" style="background-color: #fab1a0;"></button>
         </div>
+        <input type="color" id="customSectionColor" class="custom-color-input">
     </div>
 
-    <div id="relationshipLines" class="relationship-lines"></div>
+    <!-- Debug console for troubleshooting -->
+    <div id="debugConsole" class="debug-console"></div>
 
-    <!-- JavaScript files in the correct order -->
-    <script src="js/content.js"></script>
-    <script src="js/spatial.js"></script>
-    <script src="js/section.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Improved script loading with error handling -->
+    <script>
+        // Initialize debug mode 
+        window.UNIT3_DEBUG = true;
+
+        // Check browser compatibility
+        function checkBrowserSupport() {
+            const issues = [];
+            
+            if (!window.localStorage) issues.push("localStorage is not supported");
+            if (!document.querySelector) issues.push("querySelector is not supported");
+            if (!window.addEventListener) issues.push("addEventListener is not supported");
+            
+            // Check for CSS Grid support
+            if (window.CSS && window.CSS.supports && 
+                !CSS.supports('display', 'grid')) {
+                issues.push("CSS Grid is not fully supported");
+            }
+            
+            if (issues.length > 0) {
+                console.warn("Browser compatibility issues:", issues);
+                
+                // Add a fallback mode flag
+                window.UNIT3_COMPATIBILITY_MODE = true;
+                
+                // Apply compatibility classes
+                document.body.classList.add('compatibility-mode');
+                
+                // Notify user in debug mode
+                if (window.UNIT3_DEBUG) {
+                    showDebugMessage("Browser compatibility issues detected: " + issues.join(", "));
+                }
+            }
+            
+            return issues.length === 0;
+        }
+
+        function showDebugMessage(message) {
+            if (!window.UNIT3_DEBUG) return;
+            
+            console.log("[UNIT3]", message);
+            
+            const debugConsole = document.getElementById('debugConsole');
+            if (debugConsole) {
+                const msgElement = document.createElement('div');
+                msgElement.className = 'debug-message';
+                msgElement.textContent = message;
+                debugConsole.appendChild(msgElement);
+                
+                // Auto-scroll to bottom
+                debugConsole.scrollTop = debugConsole.scrollHeight;
+            }
+        }
+
+        // Check if DOM is ready
+        function domReady(callback) {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', callback);
+            } else {
+                callback();
+            }
+        }
+
+        // Initialize application
+        domReady(function() {
+            showDebugMessage("DOM loaded, initializing app...");
+            
+            // Check browser compatibility
+            checkBrowserSupport();
+            
+            // Load main script
+            const script = document.createElement('script');
+            script.src = 'js/main.js';
+            
+            script.onload = function() {
+                showDebugMessage("main.js loaded successfully");
+            };
+            
+            script.onerror = function() {
+                showDebugMessage("ERROR: Failed to load main.js");
+                
+                // Try to add default section as fallback
+                if (typeof window.addDefaultSection === 'function') {
+                    window.addDefaultSection();
+                }
+            };
+            
+            document.body.appendChild(script);
+        });
+
+        // Add global error handler
+        window.onerror = function(message, source, lineno, colno, error) {
+            showDebugMessage(`ERROR: ${message} at ${source}:${lineno}:${colno}`);
+            return false;
+        };
+
+        // Simple fallback function
+        window.addDefaultSection = function() {
+            const contentArea = document.getElementById('contentArea');
+            if (!contentArea) return;
+            
+            contentArea.innerHTML = `
+                <div class="section" style="--section-color: #4ecdc4;">
+                    <div class="section-header">
+                        <div class="section-title">Welcome to UNIT3</div>
+                    </div>
+                    <div class="section-content">
+                        <h3>Latest Updates</h3>
+                        <p>Welcome to UNIT3. If you're seeing this message, there might be an issue with the JavaScript functionality.</p>
+                        <p>Try refreshing the page or using a different browser.</p>
+                    </div>
+                </div>
+            `;
+        };
+    </script>
 </body>
 </html>
